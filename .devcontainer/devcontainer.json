@@ -2,19 +2,19 @@
   "name": "DSH (DeepSeek Harness) Codespace",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
   "postCreateCommand": "npm install -g @deepseek-ai/dsh",
-  "postStartCommand": "nohup dsh web --no-open > /tmp/dsh.log 2>&1 &",
+  "postStartCommand": "bash ${containerWorkspaceFolder}/.devcontainer/start-dsh.sh",
   "forwardPorts": [
+    3081,
     3080
   ],
   "portsAttributes": {
-    "3080": {
-      "label": "DeepSeek Harness Web UI",
+    "3081": {
+      "label": "DSH Web (open this)",
       "onAutoForward": "openPreview"
-    }
-  },
-  "customizations": {
-    "vscode": {
-      "extensions": []
+    },
+    "3080": {
+      "label": "DSH Web (direct, needs token)",
+      "onAutoForward": "silent"
     }
   }
 }

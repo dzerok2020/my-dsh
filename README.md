@@ -1,18 +1,19 @@
 # my-dsh
 
-Run DeepSeek Harness (DSH) in GitHub Codespaces for AI vibe coding.
+Run DeepSeek Harness (DSH) in GitHub Codespaces.
 
 ## Open in Codespaces
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/dzerok2020/my-dsh)
 
-## Setup
+## How it works
 
-1. Add a Codespace secret named `DEEPSEEK_API_KEY` in your GitHub account settings
-   (Settings → Codespaces → Secrets) with your DeepSeek API key.
-2. Create a Codespace from this repo.
-3. The container installs `@deepseek-ai/dsh` and starts `dsh web` on port 3080.
-4. Open the forwarded port 3080 to use the DSH Web UI.
+1. Create a Codespace from this repo (click badge above).
+2. The container installs `@deepseek-ai/dsh` and starts it automatically.
+3. Codespaces opens **port 3081** in your browser automatically.
+   That page redirects to the DSH Web UI (with the required token).
+4. Add your DeepSeek API key as a Codespace secret named `DEEPSEEK_API_KEY`
+   (GitHub Settings → Codespaces → Secrets) before creating the Codespace,
+   or set it in the Codespace terminal.
 
-The workspace lives in the Codespace (cloud). For local-machine workspaces instead,
-use a self-hosted GitHub Actions runner.
+Workspace lives in the Codespace (cloud).
