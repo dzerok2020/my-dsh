@@ -3,6 +3,11 @@ set -u
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+if ! command -v dsh >/dev/null 2>&1; then
+  npm config set allow-scripts=@deepseek-ai/dsh-subprocess-local,koffi,node-pty,@google/genai,protobufjs --location=user
+  npm install -g @deepseek-ai/dsh
+fi
+
 if [ -n "${CODESPACE_NAME:-}" ]; then
   PUBLIC_URL="https://${CODESPACE_NAME}-3080.app.github.dev/"
 else

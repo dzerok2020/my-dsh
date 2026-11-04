@@ -1,7 +1,7 @@
 {
   "name": "DSH (DeepSeek Harness) Codespace",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
-  "postCreateCommand": "npm install -g @deepseek-ai/dsh",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:24",
+  "postCreateCommand": "npm config set allow-scripts=@deepseek-ai/dsh-subprocess-local,koffi,node-pty,@google/genai,protobufjs --location=user && npm install -g @deepseek-ai/dsh",
   "postStartCommand": "bash ${containerWorkspaceFolder}/.devcontainer/start-dsh.sh",
   "forwardPorts": [
     3081,
